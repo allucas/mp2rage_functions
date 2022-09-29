@@ -15,16 +15,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-inv1", "--inv1_path")
 parser.add_argument("-inv2","--inv2_path")
 parser.add_argument("-uni","--uni_path")
-parser.add_argument("-o","output_nifti")
+parser.add_argument("-o","--output_nifti")
 
 
 
 args = parser.parse_args()
 
-inv1_name = parser.inv1_path
-inv2_name = parser.inv2_path
-uni_name = parser.uni_path
-output = parser.output_nifti
+inv1_name = args.inv1_path
+inv2_name = args.inv2_path
+uni_name = args.uni_path
+output = args.output_nifti
 
 inv1 = nib.load(inv1_name).get_fdata()
 inv2 = nib.load(inv2_name).get_fdata()
